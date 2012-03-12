@@ -1,0 +1,26 @@
+{
+  "name": "2co",
+  "description": "Auth solution (password, facebook, & more) for your node.js Connect & Express apps",
+  "version": "0.0.1",
+  "homepage": "https://github.com/biggora/2co/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/biggora/2co.git"
+  },
+  "author": "Aleksej Gordejev <aleksej@gordejev.lv> (https://github.com/biggora/)",
+  "keywords": [
+    "payment",
+    "2checkout"
+  ],
+  "main": "./index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">=0.5"
+  }
+}

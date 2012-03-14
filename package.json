@@ -1,6 +1,6 @@
 {
   "name": "2co",
-  "description": "Auth solution (password, facebook, & more) for your node.js Connect & Express apps",
+  "description": "Module that will provide nodejs adapters for 2checkout API payment gateway",
   "version": "0.0.1",
   "homepage": "https://github.com/biggora/2co/",
   "repository": {

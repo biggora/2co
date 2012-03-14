@@ -4,25 +4,24 @@ adapters for [2checkout](http://www.2checkout.com/documentation/api/) API paymen
 
 ## Usage overview
 
-### list_products
+### Example list_products method
 
 The list_products call is used to retrieve list of all products in account.
 
-   var checkout = require("2co");
+    var checkout = require("2co");
 
-   var product = {
+    var product = {
          vendor_product_id:'00001'
-   };
+    };
 
-   checkout.setAuth('USERNAME','PASSWORD');
-   checkout.exec('list_products',product);
+    checkout.setAuth('USERNAME','PASSWORD');
+    checkout.exec('list_products',product);
 
-   checkout.on('data',function(data){
+    checkout.on('data',function(data){
        console.log(data);
-   });
+    });
 
-   checkout.on('error',function(error){
+    checkout.on('error',function(error){
        console.log(error);
-   });
-
+    });
 

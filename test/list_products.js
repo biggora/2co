@@ -28,8 +28,8 @@ var product = {
     vendor_product_id:'00001'
 };
 
-
-checkout.exec('list_products',product,config);
+checkout.setAuth(config.user,config.pass);
+checkout.exec('list_products',product);
 
 checkout.on('data',function(data){
     console.log("Connection OK");

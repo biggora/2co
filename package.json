@@ -10,7 +10,9 @@
   "author": "Aleksej Gordejev <aleksej@gordejev.lv> (https://github.com/biggora/)",
   "keywords": [
     "payment",
-    "2checkout"
+    "2checkout",
+    "adapter",
+    "gateway"
   ],
   "main": "./index.js",
   "directories": {

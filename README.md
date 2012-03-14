@@ -10,8 +10,9 @@ The list_products call is used to retrieve list of all products in account.
 
     var checkout = require("2co");
 
+    /* Filter list results on product ID. Optional. */
     var product = {
-         vendor_product_id:'00001'
+         vendor_product_id:'your product id'
     };
 
     checkout.setAuth('USERNAME','PASSWORD');

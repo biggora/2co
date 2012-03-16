@@ -22,7 +22,7 @@
       The direction of the sort process. (‘ASC’ or ‘DESC’) (case insensitive) Optional.
 */
 var checkout = require("./../../2co"),
-config = require("./config");
+config = require("./conf");
 
 var product = {
     vendor_product_id:'00001'

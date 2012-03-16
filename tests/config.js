@@ -10,6 +10,6 @@
  */
 
 module.exports = {
-        user: 'biggora',
-        pass: 'Ch09091234'
+        user: 'your login',
+        pass: 'your pass'
 };

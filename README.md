@@ -36,6 +36,14 @@ The list_products call is used to retrieve list of all products in account.
 ### Instant Notification System
 for Express:
 
+    var checkout = require("2co"),
+    express = require('express'),
+    app = express.createServer(),
+    host = 'localhost',
+    port = 3000;
+
+    app.use(app.router);
+
     checkout
     .notificationRoute('/notifications') // default route '/payments/2co/notifications'
     .notificationCallback(function(req,res){

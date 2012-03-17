@@ -2,9 +2,15 @@
 2CO is the module that will provide nodejs
 adapters for [2checkout](http://www.2checkout.com/documentation/api/) API payment gateway.
 
+## Installation
+
+To install 2co:
+
+    $ npm install 2co
+
 ## Usage overview
 
-### Example list_products method
+### Example
 
 The list_products call is used to retrieve list of all products in account.
 
@@ -16,6 +22,7 @@ The list_products call is used to retrieve list of all products in account.
     };
 
     checkout.setAuth('USERNAME','PASSWORD');
+    /* list_products method */
     checkout.exec('list_products',product);
 
     checkout.on('data',function(data){
@@ -25,6 +32,17 @@ The list_products call is used to retrieve list of all products in account.
     checkout.on('error',function(error){
        console.log(error);
     });
+
+### Instant Notification System
+for Express:
+
+    checkout
+    .notificationRoute('/notifications') // default route '/payments/2co/notifications'
+    .notificationCallback(function(req,res){
+        var data = req.query || {};
+        res.send(data);
+    }).notificationHelper(app);
+
 
 ## Author
 

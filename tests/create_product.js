@@ -57,8 +57,8 @@ var checkout = require("2co");
 var product = {
     name:'New iPad',
     price:'500.00',
-    pending_url:'http://youhost/payments/2co/callback/0001',
-    approved_url:'http://youhost/payments/2co/callback/0001',
+    pending_url:'http://yourhost/payments/2co/callback/0001',
+    approved_url:'http://yourhost/payments/2co/callback/0001',
     vendor_product_id:'0001',
     description:'New iPad',
     long_description:'New iPad'

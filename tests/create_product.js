@@ -52,21 +52,21 @@
 
  */
 
-var checkout = require("./../2co");
+var checkout = require("2co");
 
 var product = {
-    name:'Subscribe 3',
-    price:'Subscribe 3',
-    pending_url:'',
-    approved_url:'',
-    vendor_product_id:'',
-    description:'',
-    long_description:''
+    name:'New iPad',
+    price:'500.00',
+    pending_url:'http://youhost/payments/2co/callback/0001',
+    approved_url:'http://youhost/payments/2co/callback/0001',
+    vendor_product_id:'0001',
+    description:'New iPad',
+    long_description:'New iPad'
 };
 
-var cp = checkout.exec('create_product',product);
-
-cp.on('data',function(data){
-    console.log("Connection OK");
-    console.log(data);
-});
+checkout
+    .exec('create_product',product)
+    .on('data',function(data){
+        console.log("Connection OK");
+        console.log(data);
+    });

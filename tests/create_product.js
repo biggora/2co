@@ -67,6 +67,10 @@ var product = {
 checkout
     .exec('create_product',product)
     .on('data',function(data){
-        console.log("Connection OK");
+        console.log("Create product OK");
         console.log(data);
+    })
+    .on('error',function(error){
+        console.log("Create product Error");
+        console.log(error);
     });

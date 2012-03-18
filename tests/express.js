@@ -7,6 +7,7 @@ port = 4000;
 
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(express.cookieParser());
 app.use(express.session({
     cookie: {
         maxAge: 60000 * 60

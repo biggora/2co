@@ -7,6 +7,12 @@ port = 4000;
 
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(express.session({
+    cookie: {
+        maxAge: 60000 * 60
+    },
+    secret: "Wild 2CO"
+}));
 
 app.get('/', function(req, res) {
     res.send('Hello 2CO');
@@ -50,6 +56,7 @@ checkout
     .shoppingCartFiller(function(sess,data,cart,res){
         res.send(data);
     })
+    .redirectTo('/')
     .expressHelper(app);
 
 app.listen(port,host);

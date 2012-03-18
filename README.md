@@ -1,12 +1,12 @@
 # 2CO
-2CO is the module that will provide nodejs
-adapters for [2checkout](http://www.2checkout.com/documentation/api/) API payment gateway.
+2CO is the module that will provide [nodejs](http://nodejs.org/)
+adapters for [2checkout](http://www.2checkout.com/documentation/api/) [API]{http://www.2checkout.com/documentation/api/} payment gateway.
 
 ## Installation
 
 To install 2co:
 
-    $ npm install 2co
+    $ npm install -g 2co
 
 ## Usage overview
 
@@ -14,9 +14,9 @@ To install 2co:
 
 The list_products call is used to retrieve list of all products in account.
 
-    var checkout = require("2co");
+    var checkout = require('2co');
 
-    /* Filter list results on product ID. Optional. */
+    /* Filter list results on vendor product ID. Optional. */
     var product = {
          vendor_product_id:'your product id'
     };
@@ -36,7 +36,7 @@ The list_products call is used to retrieve list of all products in account.
 ### Instant Notification System
 for Express:
 
-    var checkout = require("2co"),
+    var checkout = require('2co'),
     express = require('express'),
     app = express.createServer(),
     host = 'localhost',
@@ -45,12 +45,24 @@ for Express:
     app.use(app.router);
 
     checkout
-    .notificationRoute('/notifications') // default route '/payments/2co/notifications'
-    .notificationCallback(function(req,res){
-        var data = req.query || {};
-        res.send(data);
-    }).notificationHelper(app);
+         .notificationRoute('/notifications') // default route '/payments/2co/notifications'
+         .fetchNotification(function(data,res){
+                res.send(data);
+         })
+         .notificationHelper(app);
 
+    app.listen(port,host);
+
+### Handling Approved URL
+for Express:
+
+    /* Callbacks if an order is immediately approved */
+    checkout
+          .scriptRoute('/2co/:pid?')  // default route '/payments/2co/callback/:pid?'
+          .scriptCallback(function(pid,data,res){
+                 res.send(data);
+          })
+          .scriptHelper(app);
 
 ## Author
 

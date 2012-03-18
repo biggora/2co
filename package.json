@@ -1,7 +1,7 @@
 {
   "name": "2co",
   "description": "Module that will provide nodejs adapters for 2checkout API payment gateway",
-  "version": "0.0.2",
+  "version": "0.0.3a",
   "homepage": "https://github.com/biggora/2co/",
   "repository": {
     "type": "git",

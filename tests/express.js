@@ -3,7 +3,7 @@ var checkout = require("./../../2co"),
 express = require('express'),
 app = express.createServer(),
 host = 'localhost',
-port = 3000;
+port = 4000;
 
 app.use(express.methodOverride());
 app.use(app.router);
@@ -14,45 +14,19 @@ app.get('/', function(req, res) {
 
 /*
  * Receive messages from 2CO Instant Notification System
- * Variant 1
  */
 checkout
     .notificationRoute('/notifications') // default route '/payments/2co/notifications'
-    .notificationCallback(function(req,res){
-        var data = req.query || {};
+    .fetchNotification(function(data,res){
         res.send(data);
-    }).notificationHelper(app);
-/*
+    })
+    .notificationHelper(app);
 
- Variant 2
-
-function callback(req,res){
-    var data = req.query || {};
-    res.send(data);
-}
-checkout
-    .notificationRoute('/notifications')
-    .notificationHelper(app, callback);
-
-*/
-
-/* Receive messages from 2CO Instant Notification System */
+/* Receive callbacks if order pending */
 checkout
     .scriptRoute('/2co/:pid?')  // default route '/payments/2co/callback/:pid?'
-    .scriptCallback(function(req,res){
-        var data = req.query || {},
-        pid = req.params.pid;
+    .scriptCallback(function(pid,data,res){
         res.send(data);
     }).scriptHelper(app);
-/*
-
-function callback(req,res){
-    var data = req.query || {};
-    res.send(data);
-}
-checkout.scriptHelper(app, callback);
-
-*/
-
 
 app.listen(port,host);

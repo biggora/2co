@@ -4,6 +4,7 @@ adapters for [2checkout](http://www.2checkout.com/documentation/api/) [API](http
 
 ## Installation
 
+Installation is done using the Node Package Manager (npm). If you don't have npm installed on your system you can download it from [npmjs.org](http://npmjs.org/).
 To install 2co:
 
     $ npm install -g 2co

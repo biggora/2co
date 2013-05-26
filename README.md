@@ -79,6 +79,15 @@ by getting in touch or submitting a pull request with changes to the README.
 - [GorkaTV](https://gorkatv.com/)
 
 
+### Recommend extensions
+
+- [Bootstrap Fancy File Plugin](http://biggora.github.io/bootstrap-fancyfile/)
+- [Bootstrap Ajax Typeahead Plugin](https://github.com/biggora/bootstrap-ajax-typeahead)
+- [TrinteJS - Javascrpt MVC Framework for Node.JS](http://www.trintejs.com/)
+- [CaminteJS - Cross-db ORM for NodeJS](http://www.camintejs.com/)
+- [MongoDB Session Storage for ExpressJS](https://github.com/biggora/express-mongodb)
+- [Middleware exposing user-agent for NodeJS](https://github.com/biggora/express-useragent)
+
 
 ## Author
 

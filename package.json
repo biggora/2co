@@ -22,6 +22,11 @@
   "engines": {
     "node": ">=0.5"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+
+  },
+  "devDependencies": {
+      "connect": "1.7.1",
+      "express": ">= 2.5.0 < 3.0.0"
+  }
 }

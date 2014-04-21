@@ -1,7 +1,7 @@
 {
   "name": "2co",
   "description": "Module that will provide nodejs adapters for 2checkout API payment gateway",
-  "version": "0.0.3f",
+  "version": "0.0.4",
   "homepage": "https://github.com/biggora/2co/",
   "repository": {
     "type": "git",
@@ -15,18 +15,25 @@
     "gateway"
   ],
   "main": "./index.js",
+  "scripts": {
+    "test": "nodeunit tests/all_test.js"
+  },
   "directories": {
     "lib": "lib",
     "tests": "tests"
   },
   "engines": {
-    "node": ">=0.5"
+    "node": ">=0.6"
   },
   "dependencies": {
 
   },
   "devDependencies": {
-      "connect": "1.7.1",
-      "express": ">= 2.5.0 < 3.0.0"
+      "nodeunit": ">= 0.6.4",
+      "express": ">= 4.0.0",
+      "express-session": "*",
+      "body-parser": "*",
+      "method-override": "*",
+      "cookie-parser": "*"
   }
 }

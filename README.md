@@ -40,11 +40,12 @@ for Express:
 
     var checkout = require('2co'),
     express = require('express'),
-    app = express.createServer(),
+    app = express(),
     host = 'localhost',
     port = 3000;
 
-    app.use(app.router);
+    // for express < 4 uncomment
+    // app.use(app.router);  
 
     checkout
          .notificationRoute('/notifications') // default route '/payments/2co/notifications'

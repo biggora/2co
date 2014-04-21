@@ -1,14 +1,18 @@
 
-var checkout = require("./../../2co"),
-express = require('express'),
-app = express.createServer(),
-host = 'localhost',
-port = 4000;
+var checkout = require("./../../2co");
+var express = require('express');
+var expressSession = require('express-session');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var cookieParser = require('cookie-parser');
+var app = express();
+var host = 'localhost';
+var port = 4000;
 
-app.use(express.methodOverride());
-app.use(app.router);
-app.use(express.cookieParser());
-app.use(express.session({
+app.use(bodyParser());
+app.use(methodOverride());
+app.use(cookieParser());
+app.use(expressSession({
     cookie: {
         maxAge: 60000 * 60
     },
@@ -46,18 +50,18 @@ checkout
 
 checkout
     .scriptRoute('/2co/:pid?')  // default route '/payments/2co/callback/:pid?'
-    .scriptCallback(function(pid,data,res){
+    .scriptCallback(function(pid, data, res){
         res.send(data);
     })
     .notificationRoute('/notifications')
-    .fetchNotification(function(data,res){
+    .fetchNotification(function(data, res){
         res.send(data);
     })
     .shoppingCartRoute('/cart')
-    .shoppingCartFiller(function(sess,data,cart,res){
+    .shoppingCartFulfill(function(sess, data, cart, res){
         res.send(data);
     })
     .redirectTo('/')
     .expressHelper(app);
 
-app.listen(port,host);
+app.listen(port, host);

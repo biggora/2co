@@ -126,3 +126,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - Visit the [author website](http://www.gordejev.lv).
 - Follow [@biggora](https://twitter.com/#!/biggora) on Twitter for updates.
 - Report issues on the [github issues](https://github.com/biggora/2co/issues) page.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/biggora/2co/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
